@@ -25,6 +25,11 @@ verdict: fine-tuned matches/beats the LLM (100.0% vs 87.8%) at ~2432× lower lat
          and $0.68/1k vs $0 — the specialized-model win on a narrow task.
 ```
 
+> **Honest basis:** these numbers are on **synthetic, templated data** (each ticket is built
+> from its own label's cue-words, so the 100% reflects a highly-separable demo set, not a
+> production claim), and the LLM figures (87.8% / 540ms / $0.68) are **modeled by `MockLLM`,
+> not measured** — set `ANTHROPIC_API_KEY` to benchmark against real Claude.
+
 On a **narrow, labeled task** the fine-tuned model wins **accuracy** (trained on-distribution),
 **latency** (no network, no generation), and **cost** ($0 vs per-call tokens). The LLM's value
 is zero-shot flexibility on *new* tasks — but where you have labels and volume, specialize.
