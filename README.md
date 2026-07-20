@@ -1,4 +1,4 @@
-# 📝 NLP Service — fine-tuned classifier vs LLM zero-shot
+# 📝 NLP Service: fine-tuned classifier vs LLM zero-shot
 
 > A deployed **text-classification service** built on a **fine-tuned** small model (TF-IDF +
 > LogisticRegression), benchmarked head-to-head against an **LLM zero-shot** baseline on
@@ -7,7 +7,7 @@
 > (synthetic labeled data); `ANTHROPIC_API_KEY` swaps the mock baseline for real Claude.
 
 Reaching for an LLM to classify support tickets is the expensive default. This shows the
-trade-off with numbers — when you have labels and volume, fine-tune the small model and serve
+trade-off with numbers, when you have labels and volume, fine-tune the small model and serve
 it for ~$0 at sub-millisecond latency.
 
 ---
@@ -28,17 +28,17 @@ verdict: fine-tuned matches/beats the LLM (100.0% vs 87.8%) at ~2432× lower lat
 > **Honest basis:** these numbers are on **synthetic, templated data** (each ticket is built
 > from its own label's cue-words, so the 100% reflects a highly-separable demo set, not a
 > production claim), and the LLM figures (87.8% / 540ms / $0.68) are **modeled by `MockLLM`,
-> not measured** — set `ANTHROPIC_API_KEY` to benchmark against real Claude.
+> not measured**, set `ANTHROPIC_API_KEY` to benchmark against real Claude.
 
 On a **narrow, labeled task** the fine-tuned model wins **accuracy** (trained on-distribution),
 **latency** (no network, no generation), and **cost** ($0 vs per-call tokens). The LLM's value
-is zero-shot flexibility on *new* tasks — but where you have labels and volume, specialize.
+is zero-shot flexibility on *new* tasks, but where you have labels and volume, specialize.
 
 ---
 
 ## Quickstart
 
-> Uses the conda **`personal`** env (per environment conventions — never `base`).
+> Uses the conda **`personal`** env (per environment conventions, never `base`).
 
 ```bash
 PY=~/miniconda3/envs/personal/bin/python
@@ -92,7 +92,7 @@ nlp-service/
 ## Résumé framing
 
 > *Built and deployed a fine-tuned text-classification service (TF-IDF + LogReg) and
-> benchmarked it against an LLM zero-shot baseline on accuracy, latency, and cost — showing
+> benchmarked it against an LLM zero-shot baseline on accuracy, latency, and cost, showing
 > the specialized model matches/beats the LLM at ~N× lower latency and $0 vs per-call cost on
 > a narrow high-volume task. The "do I even need an LLM here" judgment.*
 
