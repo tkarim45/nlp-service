@@ -12,6 +12,13 @@ it for ~$0 at sub-millisecond latency.
 
 ---
 
+
+## Architecture
+
+![architecture](docs/assets/architecture.png)
+
+*Interactive/exportable version: [`docs/assets/architecture.html`](docs/assets/architecture.html).*
+
 ## The head-to-head (`nlpsvc-benchmark`)
 
 ```
